@@ -1,0 +1,12 @@
+.rowContainer{
+    width: 60vw;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    width: 100%;
+}
+button{
+    width: 100px;
+}

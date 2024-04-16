@@ -1,0 +1,10 @@
+.container{
+    width: 60vw;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    /* grid-template-columns: 2fr 1fr 1fr; */
+}
+input{
+    width: 100%;
+}
