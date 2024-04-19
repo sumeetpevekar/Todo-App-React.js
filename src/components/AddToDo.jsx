@@ -1,6 +1,7 @@
 import { useContext, useRef} from "react";
 import styles from "./AddToDo.module.css"
 import { TodoItemsContext } from "../store/ToDoItems-store";
+import { MdAddTask } from "react-icons/md";
 const AddToDo = () => {
 
     const {addNewItems}  = useContext(TodoItemsContext)
@@ -19,16 +20,11 @@ const AddToDo = () => {
         
     }
      return (
-        <form className={`${styles.rowContainer} row`} onSubmit={handleNewItem}>
-            <div className="col-4">
-                <input type="text" ref={todoNameElement} placeholder="Enter Todo here"/>
-            </div>
-            <div className="col-4">
-                <input type="date" ref={todoDateElement} />
-            </div>
-            <div className="col-2">
-                <button type="submit" className="btn btn-success" onSubmit={(e) => {addNewItems(); handleNewItem()}}>Add</button>
-            </div>
+        <form className={styles.rowContainer} onSubmit={handleNewItem}>
+                <input className={styles.input} type="text" ref={todoNameElement} placeholder="Enter Todo here"/>
+                <input className={styles.input} type="date" ref={todoDateElement} />
+                <button type="submit" className={`${styles.addBtn} btn btn-success`} onSubmit={(e) => {addNewItems(); handleNewItem()}}>Add</button>
+                <button type="submit" className={`${styles.addBtnIcon} btn btn-success`} onSubmit={(e) => {addNewItems(); handleNewItem()}}><MdAddTask /></button>
       </form>
     )
 }

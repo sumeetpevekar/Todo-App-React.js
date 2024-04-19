@@ -1,12 +1,68 @@
 .rowContainer{
-    width: 60vw;
-    margin: 0px auto;
+    width: 80%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: aliceblue;
+
 }
-input{
-    width: 100%;
+.input{
+    width: 230px;
+    padding: 0px 10px;
+    height: 30px;
 }
 button{
     width: 100px;
+}
+.addBtnIcon{
+    display: none;
+}
+@media only screen and (max-width: 1000px) {
+    .rowContainer{
+        width: 100%;
+        gap: 0px 30px;
+    }
+}
+@media only screen and (max-width: 625px) {
+    .rowContainer{
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    .addBtnIcon{
+        display: block;
+    }
+    .addBtn{
+        display: none;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .input{
+        font-size: 14px;
+    }
+    .addBtnIcon{
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 385px) {
+    .rowContainer{
+        width: 80%;
+        padding: 0;
+    }
+    .input{
+        width: 100%;
+        font-size: 12px;
+    }
+    .addBtnIcon{
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+    }
 }

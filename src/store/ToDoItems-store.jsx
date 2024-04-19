@@ -8,8 +8,13 @@ export const TodoItemsContext = createContext({
 
 const todoItemsReducer = (currentTodoItems, action) => {
     let newTodoItems = currentTodoItems;
+    let currentDate = new Date();
+    let currYear = currentDate.getFullYear();
+    let currMonth = currentDate.getMonth() + 1;
+    currMonth = currMonth < 10 ? '0' + currMonth : currMonth;
+    let currDay = currentDate.getDate();
     if(action.type == "NEW_ITEM"){
-      newTodoItems = [...currentTodoItems, {name: action.payload.todoName, date: action.payload.todoDate || (new Date()).toLocaleDateString(),}]
+      newTodoItems = [...currentTodoItems, {name: action.payload.todoName, date: action.payload.todoDate || `${currYear}-${currMonth}-${currDay}`}]
     }else if(action.type == "DELETE_ITEM"){
       newTodoItems = newTodoItems.filter(item => item.name !== action.payload.name)
     }
